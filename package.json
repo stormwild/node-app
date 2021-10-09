@@ -4,15 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "cross-env DEBUG=app nodemon server.js",
+    "debug": "cross-env DEBUG=* nodemon server,js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alexander Torrijos",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.2",
+    "cross-env": "^7.0.3",
     "debug": "^4.3.2",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.13"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "delay": 3000
   }
 }
